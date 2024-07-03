@@ -110,15 +110,18 @@ document.addEventListener('DOMContentLoaded', function() {
       newSourceMp4 = './assets/welcome_video.mp4';
     }
 
-    if (sources[0].src !== newSourceWebm || sources[1].src !== newSourceMp4) {
+    // Only update the video source if it has changed
+    if (new URL(sources[0].src).pathname !== newSourceWebm || new URL(sources[1].src).pathname !== newSourceMp4) {
       sources[0].src = newSourceWebm;
       sources[1].src = newSourceMp4;
       video.load();
     }
   }
 
+  // Update video source on page load
   updateVideoSource();
 
+  // Update video source on window resize
   window.addEventListener('resize', updateVideoSource);
 });
 
