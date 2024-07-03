@@ -99,17 +99,27 @@ document.addEventListener('DOMContentLoaded', function() {
   const sources = video.getElementsByTagName('source');
 
   function updateVideoSource() {
-    if (window.innerWidth <= 480) {
-      sources[0].src = './assets/welcome_video_mobile.webm';
-      sources[1].src = './assets/welcome_video_mobile.mp4';
+    const isMobile = window.matchMedia('(max-width: 480px)').matches;
+    let newSourceWebm, newSourceMp4;
+
+    if (isMobile) {
+      newSourceWebm = './assets/welcome_video_mobile.webm';
+      newSourceMp4 = './assets/welcome_video_mobile.mp4';
     } else {
-      sources[0].src = './assets/welcome_video.webm';
-      sources[1].src = './assets/welcome_video.mp4';
+      newSourceWebm = './assets/welcome_video.webm';
+      newSourceMp4 = './assets/welcome_video.mp4';
     }
-    video.load(); 
+
+    if (sources[0].src !== newSourceWebm || sources[1].src !== newSourceMp4) {
+      sources[0].src = newSourceWebm;
+      sources[1].src = newSourceMp4;
+      video.load();
+    }
   }
 
   updateVideoSource();
+
+  window.addEventListener('resize', updateVideoSource);
 });
 
 
