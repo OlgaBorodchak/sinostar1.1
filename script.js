@@ -93,6 +93,27 @@ function headerHeight() {
   }
 }
 
+//Switch sources based on screen size
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.querySelector('.welcome-video');
+  const sources = video.getElementsByTagName('source');
+
+  function updateVideoSource() {
+    if (window.innerWidth <= 480) {
+      sources[0].src = './assets/welcome_video_mobile.webm';
+      sources[1].src = './assets/welcome_video_mobile.mp4';
+    } else {
+      sources[0].src = './assets/welcome_video.webm';
+      sources[1].src = './assets/welcome_video.mp4';
+    }
+    video.load(); 
+  }
+
+  updateVideoSource();
+
+  window.addEventListener('resize', updateVideoSource);
+});
+
 
 // Courusel
 const swiper = new Swiper(".swiper", {
@@ -197,31 +218,6 @@ playBtns.forEach((btn, index) => {
       btn.classList.toggle("pause-btn");
     }
   });
-});
-
-//Animation Item Five
-const itemFiveTitle = document.querySelector(".item-5-title");
-const itemFiveImg = document.querySelector(".item-5 img");
-
-const zoomItemFive = gsap.timeline({ paused: true });
-
-zoomItemFive.to(itemFiveImg, {
-  scale: 1.3,
-  duration: 1,
-});
-
-zoomItemFive.to(".item-5-title svg", {
-    xPercent: "400",
-    ease: "power3.out",
-    duration: 1,
-  }, "<"
-);
-
-itemFiveTitle.addEventListener("mouseenter", function () {
-  zoomItemFive.play();
-});
-itemFiveTitle.addEventListener("mouseleave", function () {
-  zoomItemFive.reverse();
 });
 
 //Animation Item Thirteen
