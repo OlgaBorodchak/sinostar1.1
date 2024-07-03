@@ -98,6 +98,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const video = document.querySelector('.welcome-video');
   const sources = video.getElementsByTagName('source');
 
+  function getPathname(url) {
+    const a = document.createElement('a');
+    a.href = url;
+    return a.pathname;
+  }
+
   function updateVideoSource() {
     const isMobile = window.matchMedia('(max-width: 480px)').matches;
     let newSourceWebm, newSourceMp4;
@@ -111,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Only update the video source if it has changed
-    if (new URL(sources[0].src).pathname !== newSourceWebm || new URL(sources[1].src).pathname !== newSourceMp4) {
+    if (getPathname(sources[0].src) !== newSourceWebm || getPathname(sources[1].src) !== newSourceMp4) {
       sources[0].src = newSourceWebm;
       sources[1].src = newSourceMp4;
       video.load();
