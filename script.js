@@ -98,37 +98,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const video = document.querySelector('.welcome-video');
   const sources = video.getElementsByTagName('source');
 
-  function getPathname(url) {
-    const a = document.createElement('a');
-    a.href = url;
-    return a.pathname;
-  }
-
   function updateVideoSource() {
-    const isMobile = window.matchMedia('(max-width: 480px)').matches;
-    let newSourceWebm, newSourceMp4;
-
-    if (isMobile) {
-      newSourceWebm = './assets/welcome_video_mobile.webm';
-      newSourceMp4 = './assets/welcome_video_mobile.mp4';
+    if (window.innerWidth <= 480) {
+      sources[0].src = './assets/welcome_video_mobile.webm';
+      sources[1].src = './assets/welcome_video_mobile.mp4';
     } else {
-      newSourceWebm = './assets/welcome_video.webm';
-      newSourceMp4 = './assets/welcome_video.mp4';
+      sources[0].src = './assets/welcome_video.webm';
+      sources[1].src = './assets/welcome_video.mp4';
     }
-
-    // Only update the video source if it has changed
-    if (getPathname(sources[0].src) !== newSourceWebm || getPathname(sources[1].src) !== newSourceMp4) {
-      sources[0].src = newSourceWebm;
-      sources[1].src = newSourceMp4;
-      video.load();
-    }
+    video.load(); 
   }
 
-  // Update video source on page load
   updateVideoSource();
-
-  // Update video source on window resize
-  window.addEventListener('resize', updateVideoSource);
 });
 
 
