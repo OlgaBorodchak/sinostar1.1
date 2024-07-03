@@ -110,8 +110,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   updateVideoSource();
-
-  window.addEventListener('resize', updateVideoSource);
 });
 
 
