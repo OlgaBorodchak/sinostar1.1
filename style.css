@@ -903,6 +903,10 @@ figure {
   transition: all .5s ease-in-out;
 }
 
+.item-4:hover span{
+  transform: scale(1.2);
+}
+
 .item-5 {
   grid-area: item-5;
   position: relative;
