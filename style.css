@@ -753,6 +753,27 @@ figure {
 
 #product-gallery {
   background-color: hsla(0, 0%, 96%, 1);
+  position: relative;
+}
+
+.video-deco-elem-one {
+  background: url(./assets/video_deco_elem_one.webp) no-repeat;
+  background-size: cover;
+  width: 18.4em;
+  height: 32em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.video-deco-elem-two {
+  background: url(./assets/video_deco_elem_two.webp) no-repeat;
+  background-size: cover;
+  width: 10.375em;
+  height: 16.625em;
+  position: absolute;
+  right: 0;
+  bottom: 10%;
 }
 
 .grid {
