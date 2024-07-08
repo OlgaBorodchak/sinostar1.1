@@ -296,7 +296,7 @@ h1 span {
 
 .btn-text-wrapper {
   display: flex;
-  margin-top: 4.75em;
+  margin-top: 1.3em;
 }
 
 .btn {
@@ -326,6 +326,7 @@ h1 span {
 }
 
 .par {
+  width: 28.0625em;
   margin-left: clamp(5rem, 39.286vw - 13.857rem, 21.5rem);
 }
 
@@ -335,7 +336,6 @@ h1 span {
   font-weight: 600;
   font-size: clamp(0.75rem, 0.376vw + 0.662rem, 1rem);
   line-height: 140%;
-  text-wrap: balance;
 }
 
 #product-portfolio {
@@ -451,7 +451,7 @@ h1 span {
   justify-content: center;
   align-items: center;
   padding: 3em 0;
-  margin: 6.25em;
+  margin-bottom: 6.25em;
   position: relative;
 }
 
@@ -958,7 +958,6 @@ figure {
 
 .item-5-title svg {
   margin-left: .8em;
-  /* padding-top: 0.2rem; */
   vertical-align: bottom;
   transition: transform .5s ease-in-out;
 }
