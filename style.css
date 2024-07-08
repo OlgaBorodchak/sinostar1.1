@@ -898,7 +898,8 @@ figure {
   top: 7%;
   right: 7%;
   color: hsl(0, 0%, 100%);
-  font-size: inherit;
+  font-size: 1em;
+  font-weight: 700;
   transition: all .5s ease-in-out;
 }
 
