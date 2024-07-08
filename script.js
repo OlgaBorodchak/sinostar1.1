@@ -233,6 +233,23 @@ itemThirteenTitle.addEventListener("mouseleave", () => {
   itemAnimation.reverse();
 });
 
+//Animation Item Fifteen
+const itemFifteen = document.querySelector(".item-15");
+const zoomItemFifteen = gsap.timeline({ paused: true });
+
+zoomItemFifteen.to(".zoom-item-15", {
+  scale: 1.3,
+  duration: 1,
+});
+zoomItemFifteen.fromTo(".item-15-icon", { y: 100 }, { autoAlpha: 1, y: 0 });
+
+itemFifteen.addEventListener("mouseenter", () => {
+  zoomItemFifteen.play();
+});
+itemFifteen.addEventListener("mouseleave", () => {
+  zoomItemFifteen.reverse();
+});
+
 // video.addEventListener('mouseleave', () => {
 //   if (!video.paused) {
 //     btn.style.display = "none";
