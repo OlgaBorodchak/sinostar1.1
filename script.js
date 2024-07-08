@@ -218,6 +218,50 @@ playBtns.forEach((btn, index) => {
   });
 });
 
+
+//Animation Item Five
+const itemFiveTitle = document.querySelector('.item-5-title')
+const itemFiveImg = document.querySelector('.item-5 img')
+
+const zoomItemFive = gsap.timeline({ paused: true });
+
+zoomItemFive.to(itemFiveImg, {
+  scale: 1.4,
+  transformOrigin: "20px 200px ",
+  duration: 2,
+  ease: "expo.out",
+})
+
+zoomItemFive.to('.item-5-title svg', {
+  x: '155',
+  ease: "circ.out",
+  duration: 2,
+}, '<')
+
+itemFiveTitle.addEventListener("mouseenter", function () {zoomItemFive.play();});
+itemFiveTitle.addEventListener("mouseleave", function () {zoomItemFive.reverse();});
+
+//Animation Iten Ten
+const itemTen = [
+  "./assets/ten.webp",
+  "./assets/ten-two.webp",
+  "./assets/ten-three.webp",
+  "./assets/ten-four.webp",
+];
+
+let item = 0;
+
+function changeItemTen() {
+  const itemTenImg = document.querySelector(".item-10-img");
+  itemTenImg.src = itemTen[item];
+  item++;
+  if (item >= itemTen.length) {
+    item = 0;
+  }
+}
+
+setInterval(changeItemTen, 2000);
+
 //Animation Item Thirteen
 const itemThirteenTitle = document.querySelector(".item-13");
 const itemAnimation = gsap.timeline({ paused: true });
