@@ -367,7 +367,7 @@ h1 span {
 .deco-element-sphere-three {
   position: absolute;
   bottom: 0;
-  background: url(/assets/deco_element_sphere_three.webp) no-repeat;
+  background: url(./assets/deco_element_sphere_three.webp) no-repeat;
   background-size: contain;
   height: clamp(10.75rem, 9.39vw + 8.549rem, 17rem);
   width: clamp(11.75rem, 9.39vw + 9.549rem, 18rem);
