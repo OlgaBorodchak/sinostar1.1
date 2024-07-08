@@ -367,7 +367,7 @@ h1 span {
 .deco-element-sphere-three {
   position: absolute;
   bottom: 0;
-  background: url(./assets/deco_element_sphere_three.webp) no-repeat;
+  background: url(/assets/deco_element_sphere_three.webp) no-repeat;
   background-size: contain;
   height: clamp(10.75rem, 9.39vw + 8.549rem, 17rem);
   width: clamp(11.75rem, 9.39vw + 9.549rem, 18rem);
@@ -922,6 +922,8 @@ figure {
   color: hsl(0, 0%, 100%);
   font-size: 1em;
   font-weight: 700;
+  font-style: normal;
+  line-height: normal;
   transition: all .5s ease-in-out;
 }
 
@@ -992,9 +994,10 @@ figure {
 
 .item-9 img {
   position: absolute;
-  top: 10%;
-  left: 7%;
-  object-fit: contain;
+  top: 23%;
+  left: 15%;
+  width: 213px;
+  height: 174px;
   transition: all .5s ease-in-out;
 }
 
