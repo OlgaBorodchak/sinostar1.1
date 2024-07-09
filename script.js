@@ -229,12 +229,12 @@ zoomItemFive.to(itemFiveImg, {
   scale: 1.4,
   transformOrigin: "20px 200px ",
   duration: 2,
-  ease: "expo.out",
+  ease: "none",
 })
 
 zoomItemFive.to('.item-5-title svg', {
   x: '155',
-  ease: "circ.out",
+  ease: "none",
   duration: 2,
 }, '<')
 
