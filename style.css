@@ -215,10 +215,14 @@ button {
   overflow: hidden;
 }
 
-#video-container, .welcome-video {
+#welcome-video-container {
+  width: 100%;
+  border-radius: 2em;
+}
+
+.welcome-video {
   display: block;
   max-width: 100%;
-  /* height: 100%; */
   object-fit: cover;
   object-position: center;
   border-radius: 0;
@@ -2241,6 +2245,7 @@ footer .footer {
     height: 15.625em;
   }
 }
+
 
 @media all and (max-width: 320px) {
 
