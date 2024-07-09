@@ -50,13 +50,19 @@ const headerAnimation = gsap.timeline()
     ease: "expo.in",
   })
 
+  .to("header", {
+    opacity: 1,
+    duration: 2,
+    }, ">"
+  )
+
   .to(".welcome-video", {
       scale: 0.9,
       yPercent: 15,
       duration: 2,
       borderRadius: "2em",
       ease: "power1.inOut",
-    }, "+=5"
+    }, ">"
   )
 
   .to(".banner", {
@@ -64,12 +70,6 @@ const headerAnimation = gsap.timeline()
       duration: 2,
       ease: "power1.inOut",
     }, "<"
-  )
-
-  .to("header", {
-      opacity: 1,
-      duration: 2,
-    }, "-=1"
   );
 
 const animatedText = document.querySelector(".animated-text");
