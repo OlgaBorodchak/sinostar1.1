@@ -881,7 +881,7 @@ figure {
   display: grid;
   gap: clamp(1rem, 2.381vw - 0.143rem, 2rem);
   grid-template-areas: "item-9 item-10 item-10";
-  grid-template-columns: 0.5fr 0.3fr 0.3fr;
+  grid-template-columns: .8fr .5fr .5fr;
   grid-area: box-four-left-top;
 }
 
@@ -889,7 +889,7 @@ figure {
   display: grid;
   gap: clamp(1rem, 2.381vw - 0.143rem, 2rem);
   grid-template-areas: "item-11 item-11 item-12";
-  grid-template-columns: 0.3fr 0.3fr 0.5fr;
+  grid-template-columns: 0.5fr 0.5fr 0.8fr;
   grid-area: box-four-left-middle;
 }
 
@@ -995,14 +995,19 @@ figure {
   width: 100%;
 }
 
-.item-9 img {
+.item-9-img-container {
   position: absolute;
-  top: 20%;
-  left: 15%;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 213px;
   height: 100%;
-  max-height: 174px;
+  padding: 2.5em 1.375em;
+}
+
+.item-9 img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   transition: all .5s ease-in-out;
 }
@@ -1172,7 +1177,6 @@ figure {
   justify-content: center;
   align-items: center;
 }
-
 .video-play-btn {
   cursor: pointer;
   background: url(./assets/icon-play.svg) no-repeat;
@@ -1594,7 +1598,7 @@ footer .footer {
   }
 
   .box-four {
-    grid-template-rows: repeat(3, 228px);
+    grid-template-rows: repeat(3, 220px);
   }
 
   .box-one,
@@ -1617,11 +1621,6 @@ footer .footer {
   .item-5-title svg {
     width: 18px;
     height: 28px;
-  }
-
-  .item-9 img {
-    top: 16%;
-    left: 10%;
   }
 
   .footer-right-side {
@@ -1659,25 +1658,9 @@ footer .footer {
     grid-template-rows: 283px;
   }
 
-  /* .box-four-left-top {
-    grid-template-areas: 'item-9 item-10';
-    grid-template-columns: .5fr .5fr;
-  }
-
-  .box-four-left-middle {
-    grid-template-areas: 'item-11 item-12';
-    grid-template-columns: .5fr .5fr;
-  } */
-
   .item-5-title svg {
     width: 15px;
     height: 25px;
-  }
-
-  .item-9 img {
-    width: 95%;
-    left: 8%;
-    top: 14%;
   }
 
   .form img {
@@ -1780,7 +1763,7 @@ footer .footer {
 
   .box-four {
     grid-template-columns: 1.1fr 0.7fr;  
-    grid-template-rows: repeat(3, 170px);
+    grid-template-rows: repeat(3, 162px);
   }
 
   .item-4 span {
@@ -1793,6 +1776,10 @@ footer .footer {
 
   .item-5-title svg {
     height: 22px;
+  }
+
+  .item-9-img-container {
+    padding: 2em 1em;
   }
 
   .item-11 img {
@@ -1892,12 +1879,6 @@ footer .footer {
 
   .item-5-title svg {
     height: 17px;
-  }
-
-  .item-9 img {
-    width: 90%;
-    left: 10%;
-    top: 5%;
   }
 
   .ligal-links {
@@ -2153,10 +2134,6 @@ footer .footer {
   .item-5-title svg {
     padding-top: 1.1em;
   }
-
-  .item-10-logo {
-    top: 25%;
-  }
   
    #product-gallery {
     background-color: hsl(0, 0%, 100%);
@@ -2201,10 +2178,6 @@ footer .footer {
 }
 
 @media all and (max-width: 393px) {
-  .item-10-logo {
-    top: 18%;
-    left: 18%;
-  }
 
   .box-one,
   .box-three,
@@ -2271,11 +2244,6 @@ footer .footer {
     left: 10%;
   }
 
-  .item-10-logo {
-    top: 24%;
-    left: 33%;
-  }
- 
   .catalogs {
     display: flex;
     flex-wrap: nowrap;
@@ -2318,7 +2286,6 @@ footer .footer {
     height: 15.625em;
   }
 }
-
 
 @media all and (max-width: 320px) {
 
