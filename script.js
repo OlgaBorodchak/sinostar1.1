@@ -53,28 +53,24 @@ const headerAnimation = gsap.timeline()
   .to("header", {
     opacity: 1,
     duration: 2,
-  }, ">")
-
-  .to("#welcome-video-container", {
-    scaleX: 0.9, 
-    scaleY: 0.9, 
-    yPercent: 15,
-    duration: 2,
-    ease: "power1.inOut",
-    borderRadius: "2em",
-  }, ">")
+  }, ">"
+  )
 
   .to(".welcome-video", {
-    duration: 2,
-    borderRadius: "2em",
-  }, "<")
+      scale: 0.9,
+      yPercent: 15,
+      duration: 2,
+      borderRadius: "2em",
+      ease: "power1.inOut",
+    }, ">"
+  )
 
   .to(".banner", {
-    paddingBottom: "10%",
-    duration: 2,
-    ease: "none",
-  }, "<"
-);
+      paddingBottom: "10%",
+      duration: 2,
+      ease: "none",
+    }, "<"
+  );
 
 const animatedText = document.querySelector(".animated-text");
 
@@ -231,13 +227,13 @@ const zoomItemFive = gsap.timeline({ paused: true });
 
 zoomItemFive.to(itemFiveImg, {
   scale: 1.4,
-  transformOrigin: "20px 200px ",
+  transformOrigin: "left 100%",
   duration: .6,
   ease: "none",
 })
 
 zoomItemFive.to('.item-5-title svg', {
-  x: '155',
+  x: '11vw',
   ease: "none",
   duration: .6,
 }, '<')
@@ -309,5 +305,3 @@ itemFifteen.addEventListener("mouseleave", () => {
 //     btn.style.display = "flex";
 //   }
 // });
-
-
