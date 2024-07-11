@@ -48,13 +48,11 @@ const headerAnimation = gsap.timeline()
     delay: 3,
     opacity: 0,
     ease: "expo.in",
-    willChange: "transform",
   })
 
   .to("header", {
     opacity: 1,
     duration: 2,
-    willChange: "opacity",
   }, ">")
 
   .to("#welcome-video-container", {
@@ -64,20 +62,17 @@ const headerAnimation = gsap.timeline()
     duration: 2,
     ease: "power1.inOut",
     borderRadius: "2em",
-    willChange: "transform",
   }, ">")
 
   .to(".welcome-video", {
     duration: 2,
     borderRadius: "2em",
-    willChange: "border-radius",
   }, "<")
 
   .to(".banner", {
     paddingBottom: "10%",
     duration: 2,
     ease: "none",
-    willChange: "padding-bottom",
   }, "<"
 );
 
