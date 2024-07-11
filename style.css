@@ -829,7 +829,8 @@ figure {
   display: grid;
   gap: clamp(1rem, 2.381vw - 0.143rem, 2rem);
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: max-content;
+  /* grid-template-rows: max-content; */
+  grid-template-rows: 357px;
 }
 
 .box-one img,
@@ -872,6 +873,7 @@ figure {
     'box-four-left-middle box-four-right'
     'box-four-left-bottom box-four-right';
   grid-template-columns: 1fr 0.7fr;  
+  grid-template-rows: repeat(3, 254px);
   grid-area: box-four;
 }
 
@@ -995,10 +997,13 @@ figure {
 
 .item-9 img {
   position: absolute;
-  top: 23%;
+  top: 20%;
   left: 15%;
-  width: 213px;
-  height: 174px;
+  width: 100%;
+  max-width: 213px;
+  height: 100%;
+  max-height: 174px;
+  object-fit: contain;
   transition: all .5s ease-in-out;
 }
 
@@ -1007,10 +1012,15 @@ figure {
   position: relative;
 }
 
-.item-10-logo {
+.item-10-logo-container {
   position: absolute;
-  top: 30%;
-  left: 34%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-11 {
@@ -1030,6 +1040,7 @@ figure {
   right: 5%;
   object-fit: contain;
   width: 90%;
+  height: 100%;
   transition: all .5s ease-in-out;
 }
 
@@ -1380,6 +1391,7 @@ form {
 .input::placeholder {
   color: hsla(105, 6%, 79%, 1);
   font-style: italic;
+  font-size: clamp(0.75rem, 0.188vw + 0.706rem, 0.875rem);
 }
 
 .input:focus {
@@ -1573,8 +1585,35 @@ footer .footer {
     height: 14em;
   }
 
+  .box-four {
+    grid-template-rows: repeat(3, 228px);
+  }
+
+  .box-one,
+  .box-three,
+  .box-five {
+    grid-template-rows: 321px;
+  }
+
+  .item-4 img {
+    width: 93%;
+  }
+
+  .item-4:hover span,
+  .item-4:hover img,
+  .item-9:hover img,
+  .item-12:hover img {
+    transform: scale(1.08);
+  }
+
   .item-5-title svg {
-    padding-top: 0.4rem;
+    width: 18px;
+    height: 28px;
+  }
+
+  .item-9 img {
+    top: 16%;
+    left: 10%;
   }
 
   .footer-right-side {
@@ -1588,9 +1627,7 @@ footer .footer {
   .catalog-style-two img {
     height: 70%;
   }
-
 }
-
 
 @media all and (max-width: 1024px) {
 
@@ -1604,7 +1641,17 @@ footer .footer {
     bottom: 0;
   }
 
-  .box-four-left-top {
+  .box-four {
+    grid-template-rows: repeat(3, 200px);
+  }
+
+  .box-one,
+  .box-three,
+  .box-five {
+    grid-template-rows: 283px;
+  }
+
+  /* .box-four-left-top {
     grid-template-areas: 'item-9 item-10';
     grid-template-columns: .5fr .5fr;
   }
@@ -1612,10 +1659,17 @@ footer .footer {
   .box-four-left-middle {
     grid-template-areas: 'item-11 item-12';
     grid-template-columns: .5fr .5fr;
-  }
+  } */
 
   .item-5-title svg {
-    padding-top: 0.6rem;
+    width: 15px;
+    height: 25px;
+  }
+
+  .item-9 img {
+    width: 95%;
+    left: 8%;
+    top: 14%;
   }
 
   .form img {
@@ -1708,38 +1762,29 @@ footer .footer {
   .box-one,
   .box-three,
   .box-five {
-    grid-template-rows: 206px;
+    grid-template-rows: 244.47px;
   }
 
   .box-two {
-    grid-template-columns: 1fr .8fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(2, 150px);
   }
 
   .box-four {
-    grid-template-rows: repeat(3, 160px);
+    grid-template-columns: 1.1fr 0.7fr;  
+    grid-template-rows: repeat(3, 170px);
   }
 
   .item-4 span {
     font-size: 14px;
   }
 
+  .item-4 img {
+    width: 85%;
+}
+
   .item-5-title svg {
-    padding-top: 0.9rem;
-  }
-
-  .item-5:hover svg {
-    transform: translate(80px, 0);
-  }
-
-  .item-9 img {
-    height: 70%;
-    top: 25%;
-  }
-
-  .item-10-logo {
-    top: 20%;
-    left: 23%;
+    height: 22px;
   }
 
   .item-11 img {
@@ -1823,8 +1868,6 @@ footer .footer {
     border-bottom-right-radius: 2em;
     background-position: right 15% center;
   }
-
-
 }
 
 @media all and (max-width: 768px)  {
@@ -1833,12 +1876,20 @@ footer .footer {
     padding-right: 2em;
   }
 
-  .item-5-title svg {
-    padding-top: 1rem;
+  .box-one,
+  .box-three,
+  .box-five {
+    grid-template-rows: 215.47px;
   }
 
-  .item-5:hover svg {
-    transform: translate(70px, 0);
+  .item-5-title svg {
+    height: 17px;
+  }
+
+  .item-9 img {
+    width: 90%;
+    left: 10%;
+    top: 5%;
   }
 
   .ligal-links {
@@ -2258,8 +2309,6 @@ footer .footer {
   .catalog-style-two img {
     height: 15.625em;
   }
-
-
 }
 
 
