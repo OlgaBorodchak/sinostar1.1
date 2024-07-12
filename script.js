@@ -57,7 +57,8 @@ const headerAnimation = gsap.timeline()
   )
 
   .to(".welcome-video", {
-      scale: 0.9,
+      scaleY: 0.9,
+      scaleX: 0.9,
       yPercent: 15,
       duration: 2,
       borderRadius: "2em",
@@ -89,7 +90,7 @@ function headerHeight() {
   ) {
     changeHeader.style.paddingBlock = '1.5em';
   } else {
-    changeHeader.style.paddingBlock = '3em';
+    changeHeader.style.paddingBlock = '2em';
   }
 }
 
@@ -233,7 +234,7 @@ zoomItemFive.to(itemFiveImg, {
 })
 
 zoomItemFive.to('.item-5-title svg', {
-  x: '11vw',
+  x: '10vw',
   ease: "none",
   duration: .6,
 }, '<')
@@ -261,6 +262,26 @@ function changeItemTen() {
 }
 
 setInterval(changeItemTen, 2000);
+
+const itemTenMobile = [
+  "./assets/ten.webp",
+  "./assets/ten-two.webp",
+  "./assets/ten-three.webp",
+  "./assets/ten-four.webp",
+];
+
+let itemMobile = 0;
+
+function changeItemTenMobile() {
+  const itemTenImg = document.querySelector(".item-10-img-mobile");
+  itemTenImg.src = itemTenMobile[itemMobile];
+  itemMobile++;
+  if (itemMobile >= itemTenMobile.length) {
+    itemMobile = 0;
+  }
+}
+
+setInterval(changeItemTenMobile, 2000);
 
 //Animation Item Thirteen
 const itemThirteenTitle = document.querySelector(".item-13");
