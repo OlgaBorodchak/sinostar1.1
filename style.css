@@ -31,7 +31,7 @@ header {
   position: fixed; 
   top: 0;
   left: 0;
-  padding: 3em 10em;
+  padding: 2em 10em;
   display: flex;
   z-index: 100;
   width: 100%;
@@ -146,7 +146,8 @@ header {
 }
 
 .nav-bar-mobile .sinostar-logo {
-  margin: 2.5em 3.5em;
+  display: flex;
+  margin: 2em;
 }
 
 .nav-list-mobile {
@@ -269,7 +270,7 @@ button {
   width: 100%;
   max-width: 90em;
   margin: 0 auto;
-  padding-block: clamp(3.125rem, 6.573vw + 1.585rem, 7.5rem) 10.625em;
+  padding-block: clamp(3.125rem, 6.573vw + 1.585rem, 7.5rem);
   padding-right: 3.75em;
 }
 
@@ -927,17 +928,23 @@ figure {
   width: 100%;
 }
 
-.item-4 img {
+.item-4-img-container {
   position: absolute;
-  top: 5%;
-  left: 4%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.item-4 img {
+  margin: 0.5em auto;
   transition: all .6s ease-in-out;
 }
 
 .item-4 span {
   position: absolute;
-  top: 10%;
-  right: 7%;
+  top: 1.5em;
+  right: 1.5em;
   color: hsl(0, 0%, 100%);
   font-size: 1em;
   font-weight: 700;
@@ -950,15 +957,19 @@ figure {
   width: 100%;
 }
 
-.item-5-title {
+.item-5-text-container {
   position: absolute;
-  top: 20%;
-  left: 1.5em;
-  width: 80%;
-  height: 80%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2.875em 1.5em;
 }
 
-.item-5-title span {
+.item-5-title {
+  display: block;
+  width: 100%;
+  height: 100%;
   font-size: clamp(1.25rem, 2.381vw + 0.107rem, 2.25rem);
   font-weight: 700;
   color: white;
@@ -973,7 +984,7 @@ figure {
 .item-4:hover img,
 .item-9:hover img,
 .item-12:hover img {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .item-6 {
@@ -1001,20 +1012,27 @@ figure {
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2.5em 1.375em;
 }
 
-.item-9 img {
+.item-9-img-container img {
   display: block;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
   object-fit: contain;
   transition: all .5s ease-in-out;
+}
+
+.item-9-title {
+  display: none;
 }
 
 .item-10 {
   grid-area: item-10;
   position: relative;
+  width: 100%;
 }
 
 .item-10-logo-container {
@@ -1026,6 +1044,14 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.item-10-img,
+.item-10-img-mobile {
+  display: block;
+  width: 100%;
+  height: 100%;
+
 }
 
 .item-11 {
@@ -1156,6 +1182,7 @@ figure {
   display: block;
   max-width: 100%;
   height: 100%;
+  flex: 1;
   border-radius: 6.328px;
 }
 
@@ -1172,7 +1199,7 @@ figure {
   top: 0;
   left: 0;
   width: 100%;
-  height: 90%;
+  height: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1187,13 +1214,12 @@ figure {
 
 .pause-btn {
   position: absolute;
-  top: 40%;
-  left: 47%;
+  top: 75%;
+  left: 45%;
   background: url(./assets/pause-icon.svg) no-repeat;
   background-size: cover;
   width: 24px;
   height: 24px;
-
 }
 
 #catalogs .container {
@@ -1608,14 +1634,7 @@ footer .footer {
   }
 
   .item-4 img {
-    width: 93%;
-  }
-
-  .item-4:hover span,
-  .item-4:hover img,
-  .item-9:hover img,
-  .item-12:hover img {
-    transform: scale(1.08);
+    width: 90%;
   }
 
   .item-5-title svg {
@@ -1766,13 +1785,18 @@ footer .footer {
     grid-template-rows: repeat(3, 162px);
   }
 
-  .item-4 span {
-    font-size: 14px;
+  .item-4 img {
+    width: 80%;
   }
 
-  .item-4 img {
-    width: 85%;
-}
+  .item-4 span {
+    font-size: 0.75em;
+    top: .8em;
+  }
+
+  .item-5-text-container {
+    padding-top: 1.8em;
+  }
 
   .item-5-title svg {
     height: 22px;
@@ -1871,6 +1895,10 @@ footer .footer {
     padding-right: 2em;
   }
 
+  .icons {
+    flex-direction: column;
+  }
+
   .box-one,
   .box-three,
   .box-five {
@@ -1916,6 +1944,10 @@ footer .footer {
     transform: translateY(-8px) rotate(-45deg);
   }
 
+  .sinostar-logo img {
+    width: 70%;
+  }
+
   .container,
   #contact .container,
   #catalogs .container {
@@ -1940,8 +1972,16 @@ footer .footer {
     width: 18em;
   }
 
+  .par p {
+    font-size: 0.875em;
+    font-feature-settings: 'cpsp' on, 'case' on;
+  }
+
+  .item-2,
   .item-3,
   .item-6,
+  .item-16,
+  .box-three,
   .box-four,
   .deco-element-sphere-five,
   .deco-element-sphere-six,
@@ -2076,55 +2116,50 @@ footer .footer {
     grid-template-areas:
       "box-one"
       "box-two"
-      "box-three"
       "box-four-mobile"
       "box-five";
+    padding-bottom: 4em;
   }
 
   .box-one,
-  .box-three,
   .box-five {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 240px);
+    grid-template-rows: 240px;
   }
 
   .box-one {
-    grid-template-areas: 
-      "item-1"
-      "item-2";
+    grid-template-areas: "item-1";
   }
 
   .box-two {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 180px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 240px);
     grid-template-areas: 
-    "item-4 item-5";
-  }
-
-  .box-three {
-    grid-template-areas: 
-      "item-7"
-      "item-8";
+    "item-4" 
+    "item-5";
   }
 
   .box-four-mobile {
     display: grid;
     gap: 1em;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 180px 240px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 240px);
     grid-template-areas: 
-    "item-9 item-10"
-    "item-14 item-14";
+    "item-9" 
+    "item-14"
+    "item-10";
   }
 
   .box-five {
-    grid-template-areas: 
-      "item-15" 
-      "item-16";
+    grid-template-areas: "item-15" ;
+  }
+
+  .item-5-text-container {
+    padding: 3em;
   }
 
   .item-5-title {
-    left: 15%;
+    font-size: 2.25em;
   }
 
   .item-5 img {
@@ -2132,9 +2167,24 @@ footer .footer {
   }
 
   .item-5-title svg {
-    padding-top: 1.1em;
+    width: initial;
+    height: initial;
   }
-  
+
+  .item-9-img-container img {
+    margin-top: 2.5em;
+  }
+
+  .item-9-title {
+    position: absolute;
+    top: 13.25px;
+    right: 16.25px;
+    color: hsl(0, 0%, 100%);
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: block;
+  }
+
    #product-gallery {
     background-color: hsl(0, 0%, 100%);
   }
@@ -2148,7 +2198,46 @@ footer .footer {
   }
 
   .catalogs {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1em;
+    gap: 2em;
+  }
+
+  .catalog-style-one {
+    display: none;
+  }
+
+  .catalog-style-one-mobile {
+    display: flex;
+  }
+
+  .catalog-style-one-mobile,
+  .catalog-style-two {
+    flex: 0 0 270px;
+    padding-inline: 0.625em;
+    padding-block: 0.625em 1.25em;
+    gap: 1.25em;
+    border-radius: 1.25em;
+  }
+
+  .catalog-description {
+    font-size: 1rem;
+  }
+
+  .catalog-title {
+    font-size: 0.75rem;
+  }
+
+  .catalog-style-one-mobile img,
+  .catalog-style-two img {
+    border-radius: 1.25em;
+  }
+
+  .catalog-style-two img {
+    height: 15.625em;
   }
 
   #contact {
@@ -2179,29 +2268,36 @@ footer .footer {
 
 @media all and (max-width: 393px) {
 
+  .par {
+    width: 15em;
+  }
+
   .box-one,
-  .box-three,
   .box-five {
-    grid-template-rows: repeat(2, 200px);
+    grid-template-rows: 224px;
   }
 
   .box-two {
-    grid-template-rows: 150px;
+    grid-template-rows: repeat(2, 224px);
   }
 
   .box-four-mobile {
-    grid-template-rows: 150px 200px;
+    grid-template-rows: repeat(3, 224px)
   }
 
-  .item-5:hover svg {
-    transform: translate(40px, 0);
+  .item-5-text-container {
+    padding: 2.8em;
   }
 
-  .item-9 img {
-    top: 20%;
+  .item-5-title {
+    font-size: 2em;
+  }
+
+  .item-5 svg {
+    width: 18px;
+    height: 24px;
   }
 }
-
 
 @media all and (max-width: 375px) {
 
@@ -2210,80 +2306,24 @@ footer .footer {
   }
 
   .box-one,
-  .box-three,
-  .box-five,
-  .box-two {
-    grid-template-rows: repeat(2, 183px);
-  }
-
-  .box-two {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 183px);
-    grid-template-areas: 
-    "item-4" 
-    "item-5";
+  .box-five {
+    grid-template-rows: 183px;
   }
 
   .box-four-mobile {
-    display: grid;
-    gap: 1em;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 183px);
-    grid-template-areas: 
-    "item-9"
-    "item-10"
-    "item-14";
+    grid-template-rows: repeat(3, 183px)
+  }
+
+  .box-two {
+    grid-template-rows: repeat(2, 183px);
+  }
+
+  .item-5-text-container {
+    padding: 2em;
   }
 
   .item-5-title {
-    top: 25%;
-    width: 60%;
-  }
-
-  .item-9 img {
-    left: 10%;
-  }
-
-  .catalogs {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 1em;
-    gap: 2em;
-  }
-
-  .catalog-style-one {
-    display: none;
-  }
-
-  .catalog-style-one-mobile {
-    display: flex;
-  }
-  .catalog-style-one-mobile,
-  .catalog-style-two {
-    flex: 0 0 270px;
-    padding-inline: 0.625em;
-    padding-block: 0.625em 1.25em;
-    gap: 1.25em;
-    border-radius: 1.25em;
-  }
-
-  .catalog-description {
-    font-size: 1rem;
-  }
-
-  .catalog-title {
-    font-size: 0.75rem;
-  }
-
-  .catalog-style-one-mobile img,
-  .catalog-style-two img {
-    border-radius: 1.25em;
-  }
-
-  .catalog-style-two img {
-    height: 15.625em;
+    font-size: 1.8em;
   }
 }
 
