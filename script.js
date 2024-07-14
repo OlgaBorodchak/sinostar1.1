@@ -234,7 +234,7 @@ zoomItemFive.to(itemFiveImg, {
 })
 
 zoomItemFive.to('.item-5-title svg', {
-  x: '10vw',
+  x: '8vw',
   ease: "none",
   duration: .6,
 }, '<')
