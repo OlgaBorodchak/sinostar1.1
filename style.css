@@ -1214,8 +1214,8 @@ figure {
 
 .pause-btn {
   position: absolute;
-  top: 75%;
-  left: 45%;
+  top: 44%;
+  left: 47%;
   background: url(./assets/pause-icon.svg) no-repeat;
   background-size: cover;
   width: 24px;
