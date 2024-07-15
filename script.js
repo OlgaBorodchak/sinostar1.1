@@ -234,7 +234,8 @@ zoomItemFive.to(itemFiveImg, {
 })
 
 zoomItemFive.to('.item-5-text-container svg', {
-  x: '160px',
+  x: '9.5vw',
+  xPercent: 100,
   ease: "none",
   duration: .6,
 }, '<')
