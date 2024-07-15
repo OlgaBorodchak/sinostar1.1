@@ -5,7 +5,7 @@ const header = document.querySelector("header");
 
 const navMobileAnimation = gsap.timeline({ paused: true, reversed: true })
   .from(".nav-mobile-wrapper", {
-    xPercent: "-100",
+    xPercent: -100,
     duration: 0.8,
     ease: "power2.out",
   });
@@ -233,15 +233,37 @@ zoomItemFive.to(itemFiveImg, {
   ease: "none",
 })
 
-zoomItemFive.to('.item-5-text-container svg', {
-  x: '9.5vw',
-  xPercent: 100,
-  ease: "none",
-  duration: .6,
-}, '<')
+gsap.matchMedia().add("(min-width: 1200px)", () => {
+  zoomItemFive.to('.item-5-text-container svg', {
+    x: 160,
+    ease: "none",
+    duration: 0.6,
+  }, '<');
+});
 
-itemFiveTitle.addEventListener("mouseenter", function () {zoomItemFive.play();});
-itemFiveTitle.addEventListener("mouseleave", function () {zoomItemFive.reverse();});
+gsap.matchMedia().add("(max-width: 1199px)", () => {
+  zoomItemFive.to('.item-5-text-container svg', {
+    x: 140,
+    ease: "none",
+    duration: 0.6,
+  }, '<');
+});
+
+gsap.matchMedia().add("(max-width: 860px)", () => {
+  zoomItemFive.to('.item-5-text-container svg', {
+    x: 100, 
+    ease: "none",
+    duration: 0.6,
+  }, '<');
+});
+
+itemFiveTitle.addEventListener("mouseenter", function() {
+  zoomItemFive.play();
+});
+
+itemFiveTitle.addEventListener("mouseleave", function() {
+  zoomItemFive.reverse();
+});
 
 //Animation Iten Ten
 const itemTen = [
