@@ -14,7 +14,6 @@ function menuIn() {
   navMobileAnimation.reversed() ? navMobileAnimation.play() : navMobileAnimation.reverse();
 }
 
-
 menuToggle.addEventListener("click", () => {
   menuToggle.classList.toggle("open-btn");
   menuIn();
@@ -39,6 +38,6 @@ function headerHeight() {
   ) {
     changeHeader.style.paddingBlock = '1.5em';
   } else {
-    changeHeader.style.paddingBlock = '3em';
+    changeHeader.style.paddingBlock = '2em';
   }
 }
