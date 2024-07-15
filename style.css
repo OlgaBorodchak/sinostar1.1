@@ -937,17 +937,18 @@ figure {
 }
 
 .item-4 img {
-  margin: 0.5em auto;
+  margin-top: 14px;
+  margin-left: 15px;
   transition: all .6s ease-in-out;
 }
 
 .item-4 span {
   position: absolute;
-  top: 1.5em;
-  right: 1.5em;
+  top: 24px;
+  right: 24px;
   color: hsl(0, 0%, 100%);
   font-size: 1em;
-  font-weight: 700;
+  font-weight: 500;
   transition: all .6s ease-in-out;
 }
 
@@ -976,7 +977,7 @@ figure {
 }
 
 .item-5-title svg {
-  margin-left: .7em;
+  margin-left: 5px;
   vertical-align: bottom;
 }
 
@@ -984,7 +985,7 @@ figure {
 .item-4:hover img,
 .item-9:hover img,
 .item-12:hover img {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .item-6 {
@@ -1199,11 +1200,12 @@ figure {
   top: 0;
   left: 0;
   width: 100%;
-  height: 85%;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .video-play-btn {
   cursor: pointer;
   background: url(./assets/icon-play.svg) no-repeat;
@@ -1481,29 +1483,31 @@ form {
 footer {
   background-color: hsl(0, 0%, 0%);
   padding-inline: clamp(1.25rem, 12.5vw - 1.25rem, 10rem);
-  padding-block: 3.5em 2em;
-  /* height: 26.875rem; */
+  padding-block: 3.75em 2em;
 }
 
-footer .footer {
+.footer-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 90em;
   height: 100%;
   margin: 0 auto;
 }
 
-.footer-left-side {
+.footer-top {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: clamp(1rem, 22.069vw - 10.862rem, 9rem);
-  flex: .6;
+}
+
+.footer-left-side {
+  flex: 1;
+  max-width: 40em;
 }
 
 .ligal-links {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: clamp(1rem, 14.286vw - 5.857rem, 7rem);
   margin-bottom: 0.5em;
 }
 
@@ -1513,15 +1517,8 @@ footer .footer {
   font-weight: 600;
 }
 
-.footer-bottom span {
-  color: hsla(0, 0%, 100%, 1);
-  font-size: clamp(0.625rem, 0.188vw + 0.581rem, 0.75rem);
-  font-weight: 300;
-}
-
 .footer-right-side {
   display: flex;
-  flex: 0.5;
 }
 
 .footer-right-side-title {
@@ -1531,23 +1528,29 @@ footer .footer {
 }
 
 .page-links-list {
-  margin-right: clamp(1rem, 8.276vw - 3.448rem, 4rem);
+  margin-left: 2.8125em;
+  margin-right: clamp(2rem, 4.762vw - 0.286rem, 4rem);
 }
 
 .page-links-list,
 .contact-list {
-  flex: 1;
-}
-
-.page-links-list ul {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  width: 100%;
+  max-width: fit-content;
 }
 
 .page-links-list ul,
 .contact-list ul {
-  margin-top: 3em;
+  margin-top: 2.7em;
+  margin-bottom: 3.0625em;
+  width: fit-content;
+}
+
+.page-links-list ul li {
+  margin-bottom: 1em;
+}
+
+.contact-list ul li {
+  line-height: 20px;
 }
 
 .list-item {
@@ -1555,11 +1558,22 @@ footer .footer {
   list-style: none; 
   color: hsla(0, 0%, 100%, 1);
   font-size: clamp(0.75rem, 0.188vw + 0.706rem, 0.875rem);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .address-wrapper {
   width: 6.9em;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-bottom span {
+  color: hsla(0, 0%, 100%, 1);
+  font-size: clamp(0.625rem, 0.188vw + 0.581rem, 0.75rem);
+  font-weight: 300;
 }
 
 .accessible_elem {
@@ -1642,10 +1656,6 @@ footer .footer {
     height: 28px;
   }
 
-  .footer-right-side {
-    justify-content: space-between;
-  }
-
   .catalog-style-one img {
     height: 100%;
   }
@@ -1712,7 +1722,8 @@ footer .footer {
   }
 
   .container,
-  #catalogs .container  {
+  #catalogs .container,
+  footer  {
     padding-inline: 2.8em;
   }
 
@@ -1908,11 +1919,6 @@ footer .footer {
   .item-5-title svg {
     height: 17px;
   }
-
-  .ligal-links {
-    gap: 1em;
-    align-items: flex-end;
-  }
 }
 
 @media all and (max-width: 480px) {
@@ -1990,7 +1996,7 @@ footer .footer {
   .deco-element-sphere-four,
   .btn-product-carousel,
   .contact-section-img,
-  .footer-left-side img {
+  .footer-left-side {
     display: none;
   }
 
@@ -2252,17 +2258,9 @@ footer .footer {
     margin-right: 0;
   }
 
-  .footer {
-    flex-direction: column-reverse;
-    justify-content: space-between;
-  }
-
-  .footer-left-side {
-    flex: 0;
-  }
-  
-  .footer-right-side {
-    justify-content: flex-start;
+  .page-links-list {
+    margin-left: 0;
+    margin-right: 3em;
   }
 }
 
