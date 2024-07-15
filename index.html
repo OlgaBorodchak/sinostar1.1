@@ -247,26 +247,26 @@
                 <div class="grid-item item-5">
                   <img src="./assets/five.webp" width="352" height="236" alt="">
                   <div class="item-5-text-container">
-                    <a class="item-5-title" href="#catalogs">
-                      Zu den <br> E-Katalogen gehen
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="31" viewBox="0 0 22 31" fill="none">
-                      <g filter="url(#filter0_d_5120_166)">
-                      <path d="M6 4L15 14.3235L6 23.5" stroke="white" stroke-width="4.5"/>
-                      </g>
-                      <defs>
-                      <filter id="filter0_d_5120_166" x="0.704199" y="0.721423" width="20.9593" height="29.754" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                      <feOffset dy="1.8"/>
-                      <feGaussianBlur stdDeviation="1.8"/>
-                      <feComposite in2="hardAlpha" operator="out"/>
-                      <feColorMatrix type="matrix" values="0 0 0 0 0.145098 0 0 0 0 0.14902 0 0 0 0 0.145098 0 0 0 0.33 0"/>
-                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5120_166"/>
-                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5120_166" result="shape"/>
-                      </filter>
-                      </defs>
-                    </svg>
-                  </a>
+                    <a class="item-5-title" href="#catalogs" aria-label="Go to E-Catalogs">
+                      <span>Zu den <br> E-Katalogen gehen</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="31" viewBox="0 0 22 31" fill="none">
+                        <g filter="url(#filter0_d_5004_3494)">
+                          <path d="M6 4L15 14.3235L6 23.5" stroke="white" stroke-width="4.5"/>
+                        </g>
+                        <defs>
+                          <filter id="filter0_d_5004_3494" x="0.704199" y="0.721423" width="20.9593" height="29.754" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dy="1.8"/>
+                            <feGaussianBlur stdDeviation="1.8"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.145098 0 0 0 0 0.14902 0 0 0 0 0.145098 0 0 0 0.33 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5004_3494"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5004_3494" result="shape"/>
+                          </filter>
+                        </defs>
+                      </svg>
+                    </a>
                   </div>
                   
                 </div>
@@ -505,37 +505,39 @@
         </section>
       </main>
       <footer>
-        <div class="footer">
-          <div class="footer-left-side">
-            <img src="./assets/sinostar_logo.svg" width="200" height="37" alt="sinostar logo">
-            <div class="footer-bottom">
-              <div class="ligal-links">
-                <a href="">Datenschutz</a>
-                <a href="">Impressum</a>
-                <a href="">Allgemeine Geschäftsbedingungen</a>
+        <div class="footer-container">
+          <div class="footer-top">
+            <div class="footer-left-side">
+              <img src="./assets/sinostar_logo.svg" width="200" height="37" alt="sinostar logo">
+            </div>
+            <div class="footer-right-side">
+              <div class="page-links-list">
+                <span class="footer-right-side-title">Links</span>
+                <ul>
+                  <li><a href="#uber-uns" class="list-item list-item-hover">Über uns</a></li>
+                  <li><a href="about.html" class="list-item list-item-hover">Unsere Geshichte</a></li>
+                  <li><a href="#catalogs" class="list-item list-item-hover">E-Kataloge</a></li>
+                  <li><a href="#contact" class="list-item list-item-hover">Kontakte</a></li>
+                </ul>
               </div>
-              <span>www.sinostar.at © 2024. Alle Rechte vorbehalten.</span>
+              <div class="contact-list">
+                <span class="footer-right-side-title">Kontakt</span>
+                <ul>
+                  <li class="list-item address-wrapper">Sinostar Daniel Sitte Schulgasse 4 6900 Bregenz Österreich</li>
+                  <li><a class="list-item" href="mailto:info@sinostar.at">Email: info@sinostar.at</a></li>
+                  <li><a class="list-item" href="tel:+4306641165819">Telefon: +43(0)664-1165819</a></li>
+                  <li class="list-item">UID: ATU 35544602</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="footer-right-side">
-            <div class="page-links-list">
-              <span class="footer-right-side-title">Links</span>
-              <ul>
-                <li><a href="#uber-uns" class="list-item list-item-hover">Über uns</a></li>
-                <li><a href="about.html" class="list-item list-item-hover">Unsere Geshichte</a></li>
-                <li><a href="#catalogs" class="list-item list-item-hover">E-Kataloge</a></li>
-                <li><a href="#contact" class="list-item list-item-hover">Kontakte</a></li>
-              </ul>
+          <div class="footer-bottom">
+            <div class="ligal-links">
+              <a href="">Datenschutz</a>
+              <a href="">Impressum</a>
+              <a href="">Allgemeine Geschäftsbedingungen</a>
             </div>
-            <div class="contact-list">
-              <span class="footer-right-side-title">Kontakt</span>
-              <ul>
-                <li class="list-item address-wrapper">Sinostar Daniel Sitte Schulgasse 4 6900 Bregenz Österreich</li>
-                <li><a class="list-item" href="mailto:info@sinostar.at">Email: info@sinostar.at</a></li>
-                <li><a class="list-item" href="tel:+4306641165819">Telefon: +43(0)664-1165819</a></li>
-                <li class="list-item">UID: ATU 35544602</li>
-              </ul>
-            </div>
+            <span>www.sinostar.at © 2024. Alle Rechte vorbehalten.</span>
           </div>
         </div>
       </footer>
