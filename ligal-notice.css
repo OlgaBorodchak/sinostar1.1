@@ -31,6 +31,7 @@ header {
   z-index: 100;
   width: 100%;
   background-color:hsl(0, 0%, 0%);
+  transition: all .5s ease;
 }
 
 .nav-bar {
@@ -200,7 +201,7 @@ button {
 }
 
 #ligal-notice {
-  padding-top: 150px;
+  padding-top: 170px;
 }
 
 .container {
@@ -223,17 +224,23 @@ h1 {
   margin-bottom: .5em;
 }
 
-.par {
+p {
   margin-bottom: 1.3em;
-}
-
-.par span {
   font-weight: 400;
+  line-height: 140%;
 }
 
 .green-color {
   color: hsla(75, 61%, 41%, 1);
   text-decoration: underline;
+}
+
+.ul {
+  list-style: none;
+}
+
+.ul li {
+  margin-bottom: 1.3em;
 }
 
 @media all and (max-width: 1200px) {
