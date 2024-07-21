@@ -22,10 +22,17 @@ function updateBackdropFilter() {
   header.style.webkitBackdropFilter = newFilter;
 }
 
+function updateAriaAttributes() {
+  const isMenuOpen = menuToggle.classList.contains("open-btn");
+  menuToggle.setAttribute("aria-label", isMenuOpen ? "Schließen" : "Menü");
+  menuToggle.setAttribute("aria-expanded", isMenuOpen);
+}
+
 menuToggle.addEventListener("click", () => {
   updateBackdropFilter();
   menuToggle.classList.toggle("open-btn");
   menuIn();
+  updateAriaAttributes();
 });
 
 navItems.forEach((link) => {
@@ -33,6 +40,7 @@ navItems.forEach((link) => {
     updateBackdropFilter();
     menuToggle.classList.toggle("open-btn");
     menuIn();
+    updateAriaAttributes();
   });
 });
 
@@ -206,19 +214,25 @@ const playBtns = document.querySelectorAll("#play");
 playBtns.forEach((btn, index) => {
   const video = document.querySelectorAll(".video")[index];
 
+  function updateAriaLabel() {
+    btn.setAttribute("aria-label", video.paused ? "Video abspielen" : "Video pausieren");
+  }
+
   btn.addEventListener("click", () => {
     if (video.paused) {
       video.play();
       video.muted = !video.muted;
-      btn.classList.toggle("pause-btn");
+      btn.classList.add("pause-btn");
     } else {
       video.pause();
       video.muted = !video.muted;
-      btn.classList.toggle("pause-btn");
+      btn.classList.remove("pause-btn"); 
     }
+    updateAriaLabel();
   });
-});
 
+  updateAriaLabel();
+});
 
 //Animation Item Five
 const itemFiveTitle = document.querySelector('.item-5-title')
