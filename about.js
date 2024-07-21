@@ -17,7 +17,7 @@ function menuIn() {
 function updateAriaAttributes() {
   const isMenuOpen = menuToggle.classList.contains("open-btn");
   menuToggle.setAttribute("aria-expanded", isMenuOpen);
-  menuToggle.setAttribute("aria-label", isMenuOpen ? "Menü schließen" : "Menü öffnen");
+  menuToggle.setAttribute("aria-label", isMenuOpen ? "Schließen" : "Menü");
 }
 
 menuToggle.addEventListener("click", () => {
