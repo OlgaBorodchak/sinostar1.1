@@ -1584,21 +1584,20 @@ footer {
   width: 1px;
 }
 
-.skip-link {
-  position: absolute;
-  overflow: hidden;
-  top: auto;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
- }
- 
- .skip-link:focus {
-  top: 0px;
-  left: 0px;
-  width: auto;
-  height: auto;
- }
+#skip a {
+    display: block;
+    position: absolute;
+    left: -999px;
+    top: -999px;
+    }
+
+#skip a:focus {
+    left: 0;
+    top: 0;
+    padding: 3px;
+    background: #ffc;
+    border:1px solid #990000;
+    }
 
 @media all and (min-width: 1441px) {
 
