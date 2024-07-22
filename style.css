@@ -1445,14 +1445,14 @@ form {
   border: none;
   border-radius: 0.5em;
   color: hsl(0, 0%, 100%);
-  text-shadow: 0px 1px 2px rgba(99, 138, 72, 0.22);
   font-family: "Plus Jakarta Sans";
   font-size: clamp(0.875rem, 0.188vw + 0.831rem, 1rem);
   font-weight: 600;
   padding: 0.6875em 2em;
   max-width: fit-content;
-  background: hsl(87, 62%, 47%);
-  box-shadow: 0px 8px 16px -4px rgba(68, 84, 49, 0.33), 8px 8px 16px 0px rgba(255, 255, 255, 0.30) inset, -8px -8px 16px 0px rgba(59, 102, 5, 0.30) inset;
+  background: hsl(126, 14%, 27%);
+  box-shadow: 0px 8px 16px -4px rgba(68, 84, 49, 0.33);
+  text-shadow: 0px 1px 2px rgba(99, 138, 72, 0.22);
 }
 
 .form-btn svg {
