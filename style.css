@@ -835,9 +835,9 @@ figure {
 }
 
 .box-one img,
+.box-two img,
 .box-three img,
-.box-five img,
-.box-two img {
+.box-five img {
   height: 100%;
 }
 
@@ -928,20 +928,11 @@ figure {
   width: 100%;
 }
 
-.item-4-img-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .item-4 img {
-  /* margin-top: 14px;
-  margin-left: 15px; */
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
   transition: all .6s ease-in-out;
 }
 
@@ -984,8 +975,13 @@ figure {
   vertical-align: bottom;
 }
 
+.item-4:hover img {
+  transform: translate(-50%, -50%) scale(1.2);
+  
+}
+
 .item-4:hover span,
-.item-4:hover img,
+
 .item-9:hover img,
 .item-12:hover img {
   transform: scale(1.1);
@@ -1553,7 +1549,7 @@ footer {
 }
 
 .contact-list ul li {
-  line-height: 20px;
+  line-height: 24px;
 }
 
 .list-item {
@@ -1824,6 +1820,10 @@ footer {
     grid-template-columns: 1.1fr 0.7fr;  
     grid-template-rows: repeat(3, 162px);
   }
+  
+  .item-4 img {
+    object-fit: contain;
+  }
 
   .item-4 span {
     font-size: 0.75em;
@@ -1939,6 +1939,11 @@ footer {
   .box-three,
   .box-five {
     grid-template-rows: 215.47px;
+  }
+
+  .item-4 span {
+    top: 13.97px;
+    right: 13px;
   }
 
   .item-5-title svg {
@@ -2194,13 +2199,17 @@ footer {
     grid-template-areas: "item-15" ;
   }
 
-  .item-4 span {
-    top: 13.97px;
-    right: 21px;
-  }
-
   .item-5-text-container {
     padding: 3em;
+  }
+
+  .item-4 img {
+    object-fit: cover;
+  }
+
+  .item-4 span {
+    top: 24px;
+    right: 24px;
   }
 
   .item-5-title {
@@ -2347,6 +2356,10 @@ footer {
     grid-template-rows: repeat(3, 224px)
   }
   
+  .item-4 img {
+    height: 95%;
+  }
+
   .item-5-text-container {
     padding: 2.8em;
   }
