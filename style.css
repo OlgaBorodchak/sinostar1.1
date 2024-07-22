@@ -113,7 +113,7 @@ header {
     hsla(0, 0%, 0%, 0.185) 70%,
     hsla(0, 0%, 0%, 0.185) 100%
   );
-  display: flex;
+  display: none;
 }
 
 .bg-filter {
@@ -236,10 +236,12 @@ button {
 
 .welcome-video {
   display: block;
-  max-width: 100%;
+  width: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 0;
+  height: 100%;
+  max-height: 1024px;
 }
 
 .animated-text {
@@ -409,7 +411,7 @@ h1 span {
 
 .subtitle {
   text-transform: uppercase;
-  color: hsl(102, 5%, 48%);
+  color: #525850;
   font-size:clamp(0.75rem, 0.376vw + 0.662rem, 1rem);
   font-weight: 500;
   letter-spacing: 3.2px;
@@ -545,7 +547,6 @@ h1 span {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* flex: 7.5em; */
 }
 
 .icon-title {
@@ -668,7 +669,7 @@ h1 span {
 }
 
 .left-side-subtitle h3 {
-  color: hsla(102, 5%, 48%, 1);
+  color: hsl(105, 5%, 33%);
   font-size: clamp(0.75rem, 0.376vw + 0.662rem, 1rem);
   font-weight: 400;
   line-height: 140%;
@@ -732,7 +733,7 @@ figure {
 }
 
 .right-side-video:hover {
-  scale: 1.2;
+  transform: scale(1.2);
 }
 
 .eco-clothing-video {
@@ -1584,6 +1585,22 @@ footer {
   width: 1px;
 }
 
+.skip-link {
+  position: absolute;
+  overflow: hidden;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+ }
+ 
+ .skip-link:focus {
+  top: 0px;
+  left: 0px;
+  width: auto;
+  height: auto;
+ }
+
 @media all and (min-width: 1441px) {
 
   .contact-section-img {
@@ -1726,7 +1743,8 @@ footer {
     display: none;
   }
 
-  .menu-toggle {
+  .menu-toggle,
+  .nav-mobile-wrapper {
     display: block;
   } 
 
@@ -1926,10 +1944,6 @@ footer {
     padding-right: 2em;
   }
 
-  .icons {
-    flex-direction: column;
-  }
-
   .box-one,
   .box-three,
   .box-five {
@@ -2043,10 +2057,12 @@ footer {
     width: 3.875em;
   }
 
+  
   .icons {
+    flex-direction: column;
     gap: 4em;
   }
-
+ 
   .icon-img {
     max-width: 3em;
   }
