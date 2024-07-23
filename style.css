@@ -2056,6 +2056,7 @@ footer {
   .icons {
     flex-direction: column;
     gap: 4em;
+    padding: 3.75em 2em 0 2em;
   }
  
   .icon-img {
