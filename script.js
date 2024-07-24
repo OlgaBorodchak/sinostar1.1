@@ -209,26 +209,41 @@ video.addEventListener("mouseleave", () => {
 });
 
 //Videos
-const playBtns = document.querySelectorAll("#play");
+const playBtns = document.querySelectorAll('.video-play-btn');
+const closeBtns = document.querySelectorAll('.video-close-btn');
+const videoPlayers = document.querySelectorAll('.video-player');
 
 playBtns.forEach((btn, index) => {
-  const video = document.querySelectorAll(".video")[index];
+  const video = videoPlayers[index].querySelector('.video');
 
   function updateAriaLabel() {
     btn.setAttribute("aria-label", video.paused ? "Video abspielen" : "Video pausieren");
   }
 
-  btn.addEventListener("click", () => {
-    if (video.paused) {
-      video.play();
-      video.muted = !video.muted;
-      btn.classList.add("pause-btn");
-    } else {
-      video.pause();
-      video.muted = !video.muted;
-      btn.classList.remove("pause-btn"); 
-    }
+  btn.addEventListener('click', () => {
+    btn.style.display = "none";
+    videoPlayers.forEach((player, playerIndex) => {
+      if (index === playerIndex) {
+        player.style.display = 'block';
+        video.play();
+      } else {
+        const otherVideo = player.querySelector('.video');
+        otherVideo.pause();
+        player.style.display = 'none';
+      }
+    });
     updateAriaLabel();
+  });
+
+  closeBtns[index].addEventListener('click', () => {
+    video.pause();
+    videoPlayers[index].style.display = 'none';
+    btn.style.display = "block";
+  });
+
+  video.addEventListener('ended', () => {
+    videoPlayers[index].style.display = 'none';
+    btn.style.display = "block";
   });
 
   updateAriaLabel();
