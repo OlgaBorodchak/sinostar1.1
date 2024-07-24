@@ -2049,6 +2049,10 @@ footer {
     max-width: 3em;
   }
 
+    #partners {
+    margin-bottom: 0;
+  }
+
   .marquee {
     margin-top: 1.875em;
   }
