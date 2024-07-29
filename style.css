@@ -1182,7 +1182,6 @@ figure {
   align-items: center;
   border-radius: 6.328px;
   position: relative;
-  flex: 1;
 }
 
 .video-poster {
@@ -1214,13 +1213,19 @@ figure {
 
 .video-player {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 3em;
+  bottom: -3em;
   z-index: 3;
-  width: fit-content;
+  width: 60vw;
   height: fit-content;
   display: none;
+}
+
+.one {
+  left: 30%;
+}
+
+.three {
+  right: 30%;
 }
 
 .video {
@@ -1238,6 +1243,7 @@ figure {
   background-size: cover;
   width: 32px;
   height: 32px;
+  cursor: pointer;
 }
 
 #catalogs .container {
@@ -1448,11 +1454,11 @@ form {
 }
 
 .input:focus {
-  border: 2px solid hsla(87, 62%, 47%, 1);
+  border: 2px solid  hsla(126, 14%, 27%, 1);
 }
 
 .custom {
-  caret-color: hsla(87, 62%, 47%, 1);
+  caret-color:  hsla(126, 14%, 27%, 1);
 } 
 
 .form-btn {
@@ -1464,7 +1470,7 @@ form {
   font-weight: 600;
   padding: 0.6875em 2em;
   max-width: fit-content;
-  background: hsl(126, 14%, 27%);
+  background: hsla(126, 14%, 27%, 1);
   box-shadow: 0px 8px 16px -4px rgba(68, 84, 49, 0.33);
   text-shadow: 0px 1px 2px rgba(99, 138, 72, 0.22);
 }
@@ -1475,7 +1481,7 @@ form {
 }
 
 .form-btn:hover {
-  background: linear-gradient(267deg, #76B02F 2.41%, #518217 100%);
+  background: hsl(125, 14%, 19%);
 }
 
 .form-btn:active {
@@ -1649,7 +1655,7 @@ footer {
   }
 
   .container,
-  #catalogs .container  {
+  #catalogs .container {
     padding-inline: 7em;
   }
 
@@ -1686,10 +1692,8 @@ footer {
     height: 70%;
   }
 
-  
-  .pause-btn {
-    top: 43%;
-    left: 46%
+  #contact .section-title  {
+    padding-right: 7em;
   }
 }
 
@@ -1726,6 +1730,10 @@ footer {
 
   .form img {
     width: 50%;
+  }
+
+  #contact .section-title  {
+    padding-right: 4em;
   }
 }
 
@@ -1898,11 +1906,6 @@ footer {
     text-wrap: initial;
   }
 
-  .pause-btn {
-    top: 41.5%;
-    left: 45%
-  }
-
   textarea {
     width: 100%;
   }
@@ -1941,11 +1944,6 @@ footer {
 
   .item-5-title svg {
     height: 17px;
-  }
-
-  .pause-btn {
-    top: 40%;
-    left: 44%
   }
 }
 
@@ -2243,15 +2241,17 @@ footer {
     flex-direction: column;
   }
 
-  .video {
+  .video-poster {
     width: 100%;
   }
 
-  .pause-btn {
-    top: initial;
-    left: initial;
+  .video-player{
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
   }
-
+ 
   .catalog-deco-element-one {
     position: absolute;
     bottom: 1000px;
