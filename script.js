@@ -230,6 +230,7 @@ playBtns.forEach((btn, index) => {
         const otherVideo = player.querySelector('.video');
         otherVideo.pause();
         player.style.display = 'none';
+        btn.style.display = "block";
       }
     });
     updateAriaLabel();
