@@ -55,7 +55,7 @@
       <main id="main">
       <div class="banner">
         <figure id="video-container">
-          <video class="welcome-video" loop autoplay muted playsinline> 
+          <video class="welcome-video" loop autoplay muted playsinline preload="none"> 
             <source src="./assets/welcome_video.mp4"  type="video/mp4"  />
             <source src="./assets/welcome-video.webm" type="video/webm" />
             <source src="./assets/welcome_video_mobile.mp4"  type="video/mp4"  />
@@ -362,49 +362,49 @@
             </div>
             <div class="videos">
               <div class="video-container">
-                <img class="video-poster" src="./assets/video-poster-one.webp" width="352" height="198" alt="">
-                <button id="play" class="video-play-btn" type="button" aria-label="Video abspielen"></button>
-                <span class="deco-line"></span> 
-              </div>
-              <div class="video-player">
-                <figure>
-                  <video class="video" playsinline controls controlsList="nodownload">
-                    <source
-                      src="./assets/iqoniq_brand_story.webm"
-                      type="video/webm" />
-                  </video>
-                </figure>
-                <button id="close" class="video-close-btn" type="button" aria-label="Video schließen"></button>
-              </div>
-              <div class="video-container">
-                <img class="video-poster" src="./assets/video-poster-two.webp" width="352" height="198" alt="">
+                <img class="video-poster" src="./assets/video-poster-one.webp" width="480" height="268" alt="">
                 <button id="play" class="video-play-btn" type="button" aria-label="Video abspielen"></button>
                 <span class="deco-line"></span>
-              </div>
-              <div class="video-player">
-                <figure>
-                  <video class="video" playsinline controls controlsList="nodownload">
-                    <source
-                      src="./assets/urban_vitamin.webm"
-                      type="video/webm" />
-                  </video>
-                </figure>
-                <button id="close" class="video-close-btn" type="button" aria-label="Video schließen"></button>
+                <div class="video-player one">
+                  <figure>
+                    <video class="video" playsinline controls controlsList="nodownload" preload="none">
+                      <source
+                        src="./assets/iqoniq_brand_story (1080p).webm"
+                        type="video/webm" />
+                    </video>
+                  </figure>
+                  <button id="close" class="video-close-btn" type="button" aria-label="Video schließen"></button>
+                </div> 
               </div>
               <div class="video-container">
-                <img class="video-poster" src="./assets/video-poster-three.webp" width="352" height="198" alt="">
+                <img class="video-poster" src="./assets/video-poster-two.webp" width="480" height="268" alt="">
+                <button id="play" class="video-play-btn" type="button" aria-label="Video abspielen"></button>
+                <span class="deco-line"></span>
+                <div class="video-player two">
+                  <figure>
+                    <video class="video" playsinline controls controlsList="nodownload" preload="none">
+                      <source
+                        src="./assets/urban_vitamin (1080p).webm"
+                        type="video/webm" />
+                    </video>
+                  </figure>
+                  <button id="close" class="video-close-btn" type="button" aria-label="Video schließen"></button>
+                </div>
+              </div>
+              <div class="video-container">
+                <img class="video-poster" src="./assets/video-poster-three.webp" width="480" height="268" alt="">
                 <button id="play" class="video-play-btn" type="button" aria-label="Video abspielen"></button>
                 <span class="deco-line"></span> 
-              </div>
-              <div class="video-player">
-                <figure>
-                  <video class="video" playsinline controls controlsList="nodownload">
-                    <source
-                      src="./assets/ukiyo_video.webm"
-                      type="video/webm" />
-                  </video>
-                </figure>
-                <button id="close" class="video-close-btn" type="button" aria-label="Video schließen"></button>
+                <div class="video-player three">
+                  <figure>
+                    <video class="video" playsinline controls controlsList="nodownload" preload="none">
+                      <source
+                        src="./assets/ukiyo (1080p).webm"
+                        type="video/webm" />
+                    </video>
+                  </figure>
+                  <button id="close" class="video-close-btn" type="button" aria-label="Video schließen"></button>
+                </div>
               </div>
             </div>
           </div>
@@ -498,7 +498,7 @@
               <h3 class="subtitle">Bitte füllen Sie das unten stehende Formular aus <br> und wir werden uns bald bei Ihnen melden</h3>
             </div>
             <div class="form col-2">
-              <form action="/form-handler.php" method="post">
+              <form action="/form-handler.php" method="post" id="contactForm">
                 <label for="name" class="label">Dein Name / Firma</label>
                 <input class="input custom" type="text" id="name" name="name" placeholder="Geben Sie Ihren Namen ein"  autocomplete="off" required/>
                 <label for="email" class="label">Email</label>
