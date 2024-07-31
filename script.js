@@ -154,25 +154,45 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  //Hoodies Animation
-  const hoodies = [
-    "./assets/variant-one.webp",
-    "./assets/variant-two.webp",
-    "./assets/variant-three.webp",
-    "./assets/variant-four.webp",
-    "./assets/variant-five.webp",
-    "./assets/variant-six.webp",
-    "./assets/variant-seven.webp",
-  ];
+  //Hoodies Animation old
+  // const hoodies = [
+  //   "./assets/variant-one.webp",
+  //   "./assets/variant-two.webp",
+  //   "./assets/variant-three.webp",
+  //   "./assets/variant-four.webp",
+  //   "./assets/variant-five.webp",
+  //   "./assets/variant-six.webp",
+  //   "./assets/variant-seven.webp",
+  // ];
 
-  let i = 0;
+  // let i = 0;
+
+  // function changeHoody() {
+  //   const image = document.querySelector(".hoody-img");
+  //   image.src = hoodies[i];
+  //   i++;
+  //   if (i >= hoodies.length) {
+  //     i = 0;
+  //   }
+  // }
+
+  // setInterval(changeHoody, 1000);
+
+  // Hoodies Animation New
+  const hoodieImages = document.querySelectorAll(".hoody-img");
+  let currentVisible = document.querySelector(".hoody-img.is-visible");
 
   function changeHoody() {
-    const image = document.querySelector(".hoody-img");
-    image.src = hoodies[i];
-    i++;
-    if (i >= hoodies.length) {
-      i = 0;
+    for (const hi of hoodieImages) {
+      hi.classList.remove("is-visible");
+    }
+
+    if (currentVisible.nextElementSibling.classList.contains("hoody-img")) {
+      currentVisible.nextElementSibling.classList.add("is-visible");
+      currentVisible = currentVisible.nextElementSibling;
+    } else {
+      hoodieImages[0].classList.add("is-visible");
+      currentVisible = hoodieImages[0];
     }
   }
 
@@ -303,45 +323,71 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //Animation Iten Ten
-  const itemTen = [
-    "./assets/ten.webp",
-    "./assets/ten-two.webp",
-    "./assets/ten-three.webp",
-    "./assets/ten-four.webp",
-  ];
+  // const itemTen = [
+  //   "./assets/ten.webp",
+  //   "./assets/ten-two.webp",
+  //   "./assets/ten-three.webp",
+  //   "./assets/ten-four.webp",
+  // ];
 
-  let item = 0;
+  // let item = 0;
 
-  function changeItemTen() {
-    const itemTenImg = document.querySelector(".item-10-img");
-    itemTenImg.src = itemTen[item];
-    item++;
-    if (item >= itemTen.length) {
-      item = 0;
+  // function changeItemTen() {
+  //   const itemTenImg = document.querySelector(".item-10-img");
+  //   itemTenImg.src = itemTen[item];
+  //   item++;
+  //   if (item >= itemTen.length) {
+  //     item = 0;
+  //   }
+  // }
+
+  // setInterval(changeItemTen, 2000);
+
+  // const itemTenMobile = [
+  //   "./assets/ten.webp",
+  //   "./assets/ten-two.webp",
+  //   "./assets/ten-three.webp",
+  //   "./assets/ten-four.webp",
+  // ];
+
+  // let itemMobile = 0;
+
+  // function changeItemTenMobile() {
+  //   const itemTenImg = document.querySelector(".item-10-img-mobile");
+  //   itemTenImg.src = itemTenMobile[itemMobile];
+  //   itemMobile++;
+  //   if (itemMobile >= itemTenMobile.length) {
+  //     itemMobile = 0;
+  //   }
+  // }
+
+  // setInterval(changeItemTenMobile, 2000);
+
+  function startItemsLoop(isMobile) {
+    const itemClass = isMobile ? "item-10-img-mobile" : "item-10-img";
+
+    const itemTenImgs = document.querySelectorAll(`.${itemClass}`);
+    let currentItemVisible = document.querySelector(`.${itemClass}.is-visible`);
+
+    function changeItemTen() {
+      for (const item of itemTenImgs) {
+        item.classList.remove("is-visible");
+      }
+
+      if (currentItemVisible.nextElementSibling.classList.contains(itemClass)) {
+        currentItemVisible.nextElementSibling.classList.add("is-visible");
+        currentItemVisible = currentItemVisible.nextElementSibling;
+      } else {
+        itemTenImgs[0].classList.add("is-visible");
+        currentItemVisible = itemTenImgs[0];
+      }
     }
+
+    setInterval(changeItemTen, 2000);
   }
 
-  setInterval(changeItemTen, 2000);
-
-  const itemTenMobile = [
-    "./assets/ten.webp",
-    "./assets/ten-two.webp",
-    "./assets/ten-three.webp",
-    "./assets/ten-four.webp",
-  ];
-
-  let itemMobile = 0;
-
-  function changeItemTenMobile() {
-    const itemTenImg = document.querySelector(".item-10-img-mobile");
-    itemTenImg.src = itemTenMobile[itemMobile];
-    itemMobile++;
-    if (itemMobile >= itemTenMobile.length) {
-      itemMobile = 0;
-    }
-  }
-
-  setInterval(changeItemTenMobile, 2000);
+  startItemsLoop(); // desktop
+  startItemsLoop(true); // mobile
 
   //Animation Item Thirteen
   const itemThirteenTitle = document.querySelector(".item-13");
