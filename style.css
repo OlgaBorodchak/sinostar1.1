@@ -1273,7 +1273,8 @@ figure {
   cursor: pointer;
 }
 
-#catalogs .container {
+#catalogs .container,
+footer {
   padding-inline: 7.5em;
 }
 
@@ -1527,7 +1528,7 @@ form {
 
 footer {
   background-color: hsl(0, 0%, 0%);
-  padding-inline: clamp(1.25rem, 3.571vw + 0.536rem, 3.75rem);
+  padding-inline: 10em;
   padding-block: 3.75em 2em;
 }
 
@@ -1730,7 +1731,8 @@ footer {
   }
 
   .container,
-  #catalogs .container {
+  #catalogs .container, 
+  footer {
     padding-inline: 7em;
   }
 
@@ -1774,7 +1776,8 @@ footer {
 
 @media all and (max-width: 1024px) {
   .container,
-  #catalogs .container {
+  #catalogs .container, 
+  footer {
     padding-inline: 4em;
   }
 
@@ -2070,7 +2073,8 @@ footer {
 
   .container,
   #contact .container,
-  #catalogs .container {
+  #catalogs .container,
+  footer {
     padding-inline: 2em;
   }
 
@@ -2533,7 +2537,8 @@ footer {
 
   .container,
   #contact .container,
-  #catalogs .container {
+  #catalogs .container, 
+  footer {
     padding-inline: 1.25em;
   }
 
