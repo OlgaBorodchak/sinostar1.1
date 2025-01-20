@@ -1706,6 +1706,10 @@ footer {
     width: 25em;
     height: 24em;
   }
+
+    .footer-credit-480w {
+    display: none;
+  }
 }
 
 @media all and (max-width: 1200px) {
@@ -1800,6 +1804,10 @@ footer {
 
   #contact .section-title {
     padding-right: 4em;
+  }
+
+    .footer-credit {
+    bottom: -17%;
   }
 }
 
@@ -1993,6 +2001,10 @@ footer {
     border-bottom-right-radius: 2em;
     background-position: right 15% center;
   }
+
+    .footer-credit {
+    bottom: -13%;
+  }
 }
 
 @media all and (max-width: 768px) {
@@ -2013,6 +2025,10 @@ footer {
 
   .item-5-title svg {
     height: 17px;
+  }
+
+    .footer-credit {
+    bottom: -16%;
   }
 }
 
@@ -2096,7 +2112,7 @@ footer {
   .video-deco-elem-one,
   .video-deco-elem-two,
   .contact-section-img,
-  .footer-left-side {
+  .footer-credit {
     display: none;
   }
 
@@ -2401,9 +2417,47 @@ footer {
     margin-right: 0;
   }
 
+ footer {
+    padding-block: 2em;
+  }
+
+  .footer-top {
+    flex-direction: column;
+  }
+
+  .footer-sinostar-logo {
+    width: 40%;
+  }
+
+  .footer-left-side {
+    margin-bottom: 3em;
+  }
+
+  .footer-right-side {
+    justify-content: start;
+  }
+
+  .footer-credit-480w {
+    display: block;
+    margin-bottom: 1em;
+  }
+
   .page-links-list {
     margin-left: 0;
     margin-right: 3em;
+  }
+
+  .page-links-list ul,
+  .contact-list ul {
+    margin-top: .5em;
+    width: fit-content;
+  }
+  .page-links-list ul li {
+    margin-bottom: .5em;
+  }
+
+  .ligal-links {
+    gap: 1.5em;
   }
 }
 
@@ -2485,5 +2539,16 @@ footer {
 
   .catalogs {
     gap: 1em;
+  }
+
+  .footer-sinostar-logo {
+    width: 115px;
+    height: 21px;
+  }
+
+  .psi-logo {
+    width: 67.86px;
+    height: 33.73px;
+    margin-left: 2em;
   }
 }
