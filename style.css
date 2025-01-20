@@ -1567,7 +1567,7 @@ footer {
 .ligal-links {
   display: flex;
   align-items: center;
-  gap: 3em;
+  gap: clamp(1.5rem, 2.143vw + 1.071rem, 3rem);
   margin-bottom: 1em;
 }
 
