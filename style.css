@@ -1694,6 +1694,10 @@ footer {
     border-top-right-radius: 2em;
     border-bottom-right-radius: 2em;
   }
+
+    .footer-credit-480w {
+    display: none;
+  }
 }
 
 @media all and (max-width: 1440px) {
