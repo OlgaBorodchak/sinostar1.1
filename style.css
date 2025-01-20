@@ -1561,7 +1561,7 @@ footer {
   display: block;
   max-width: 100%;
   object-fit: contain;
-  margin-left: 3.5em;
+  margin-left: clamp(1.5rem, 2.857vw + 0.929rem, 3.5rem);
 }
 
 .ligal-links {
@@ -2459,10 +2459,6 @@ footer {
   .page-links-list ul li {
     margin-bottom: .5em;
   }
-
-  .ligal-links {
-    gap: 1.5em;
-  }
 }
 
 @media all and (max-width: 393px) {
@@ -2553,6 +2549,5 @@ footer {
   .psi-logo {
     width: 67.86px;
     height: 33.73px;
-    margin-left: 2em;
   }
 }
